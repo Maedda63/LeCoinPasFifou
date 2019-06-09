@@ -1,0 +1,28 @@
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="{{ path('home') }}">
+            <img src="https://cdn.pixabay.com/photo/2016/09/30/17/29/shopping-1705800_960_720.png">
+            LeCoinPasFifou
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('ad_list') }}">Les annonces</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('ad_add') }}">Créer une annonce</a>
+                </li>
+            </ul>
+        </div>
+
+        <form class="form-inline" method="get" action="{{ path('ad_list') }}">
+            <input class="form-control mr-sm-2" name="query" type="search" placeholder="Recherche" aria-label="Recherche">
+            <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Recherche</button>
+        </form>
+    </nav>
+</header>

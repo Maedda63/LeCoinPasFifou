@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Créer une annonce - {{ parent() }}{% endblock %}
+
+{% block body %}
+<div class="row">
+    <div class="ad-form container-form col-sm-8 offset-sm-2 col-md-6 offset-md-3">
+        <h1>Créer une annonce</h1>
+        {{ form_start( form ) }}
+
+        {% for field in ['title', 'description', 'picture', 'price', 'place', 'category'] %}
+            <div class="form-group row">
+                {{ form_label(form[field]) }}
+                <div class="col-sm-8">
+                    {{ form_widget(form[field]) }}
+                    {{ form_errors(form[field]) }}
+                </div>
+            </div>
+        {% endfor %}
+        <button class="btn btn-success" type="submit">Créer</button>
+        {{ form_end( form ) }}
+        <br>
+        <br>
+    </div>
+</div>
+
+{% endblock %}

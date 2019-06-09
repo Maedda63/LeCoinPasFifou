@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Les annonces - {{ parent() }}{% endblock %}
+
+{% block body %}
+<div class="container mt-4">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Trier par</button>
+    <h1>Les annonces</h1>
+
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="http://localhost/LeCoinPasFifou/public/index.php/ads?sort=1&query={{ query }}">De la moins chère à la plus chère</a>
+        <a class="dropdown-item" href="http://localhost/LeCoinPasFifou/public/index.php/ads?sort=2&query={{ query }}">De la plus chère à la moins chère</a>
+        <a class="dropdown-item" href="http://localhost/LeCoinPasFifou/public/index.php/ads?sort=3&query={{ query }}">Les plus anciennes</a>
+        <a class="dropdown-item" href="http://localhost/LeCoinPasFifou/public/index.php/ads?sort=4&query={{ query }}">Les plus récentes</a>
+    </div>
+    <div class="ads">
+        {% for ad in ads %}
+
+            <div class="card">
+                <div class="card-img-top" style="background-image:url('{{ ad.picture }}');"></div>
+                <div class="card-body">
+                    <h2 class="card-title">{{ ad.title }}</h2>
+                    <p class="card-text">{{ ad.description|slice(0, 100) }}...</p>
+                    <div class="card-info">
+                        <div>{{ ad.price ? ad.price ~ '€' : 'Gratuit' }}</div>
+                        <div>{{ ad.place.city }} {{ ad.place.zipCode}}</div>
+                    </div>
+                    <a href="{{ path( 'ad_show', {"id": ad.id} ) }}" class="btn btn-primary">Voir plus</a>
+                </div>
+            </div>
+
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

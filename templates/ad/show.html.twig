@@ -1,0 +1,42 @@
+    
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ ad.title }} - {{ parent() }}{% endblock %}
+
+{% block body %}
+<h1 class="title">
+    <span>{{ ad.title }}</span>
+</h1>
+
+<div class="picture-container">
+    <img class="picture" src="{{ ad.picture }}">
+</div>
+
+<div class="container ad">
+    <div class="row">
+        <div class="col-12 col-md-8 py-4">
+        <h4>Description</h4>
+            {{ ad.description }}
+        </div>
+        <div class="col-12 col-md-4 text-light py-4 text-dark">
+            <div class="">
+                <strong>Prix : </strong>
+                {{ ad.price ? ad.price ~ '€' : 'Gratuit' }}
+            </div>
+            <div class="">
+                <strong>Lieu : </strong>
+
+                {{ ad.place.zipCode }} - {{ ad.place.city }}
+            </div>
+
+            <div class="">
+                <strong>Vendeur : </strong>
+                {{ ad.owner.username }}
+                <br>
+                <a class="btn btn-warning" href="mailto: {{ ad.owner.email }}">Contacter le vendeur</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

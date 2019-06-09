@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil - {{ parent() }}{% endblock %}
+
+{% block body %}
+<div class="landing">
+    <div class="landing-overlay">
+        <h1>Bienvenue sur LeCoinPasFifou</h1>
+        <br>
+        <p>C'est comme Leboncoin, mais c'est moins fifou</p>
+        <p>Nous avons conquis la métropole Clermontoise aujourd'hui, demain ce sera le monde !</p><img class="minus" src="../images/minus&cortex.png">
+        <p>Découvrez les annonces des vendeurs de la métropole clermontoise ou postez les votres !</p>
+        <br>
+        <a href="{{ path('ad_list') }}" class="btn btn-info">Découvrir les annonces</a>
+    </div>
+</div>
+{% endblock %}
