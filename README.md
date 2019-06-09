@@ -1,3 +1,4 @@
 # LeCoinPasFifou
 
-Il n'y a qu'un utilisateur par défaut car je n'ai pas fait la fonctionnalité bonus des comptes utilisateur.
+La base de donnÃ©es et dans le dossier script
+Il n'y a qu'un utilisateur par dï¿½faut car je n'ai pas fait la fonctionnalitï¿½ bonus des comptes utilisateur.
